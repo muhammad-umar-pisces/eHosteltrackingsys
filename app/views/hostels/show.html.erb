@@ -1,0 +1,41 @@
+<style type="text/css">
+	.img{
+		max-width: 80%;
+		max-height: 80%;
+		display: block;
+	};
+
+</style>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hostel name:</strong>
+  <%= @hostel.hostel_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @hostel.location %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hostel.price %>
+</p>
+<div class="container">
+	<div class="row">
+	 <% (0...@hostel.images.count).each do |image| %>
+	  <div class="img-div col-md-4">
+		<%= image_tag(@hostel.images[image], :class => "img") %>
+	  </div>
+	  <% end %>
+
+	</div>
+</div>
+	
+
+
+ <%= link_to 'Edit', edit_hostel_path(@hostel) %>|
+ <%= link_to 'Destroy', @hostel, method: :delete, data: { confirm: 'Are you sure?' } %>|
+
+<%= link_to 'Back', hostels_path %>
