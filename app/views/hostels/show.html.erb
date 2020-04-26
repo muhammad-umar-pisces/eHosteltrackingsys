@@ -6,6 +6,11 @@
 	};
 
 </style>
+ <%= link_to 'Edit', edit_hostel_path(@hostel) %>|
+ <%= link_to 'Destroy', @hostel, method: :delete, data: { confirm: 'Are you sure?' } %>|
+
+<%= link_to 'Back', hostels_path %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -32,10 +37,3 @@
 
 	</div>
 </div>
-	
-
-
- <%= link_to 'Edit', edit_hostel_path(@hostel) %>|
- <%= link_to 'Destroy', @hostel, method: :delete, data: { confirm: 'Are you sure?' } %>|
-
-<%= link_to 'Back', hostels_path %>

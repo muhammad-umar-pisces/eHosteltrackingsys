@@ -1,4 +1,18 @@
-<%= form_with(model: hostel, local: true) do |form| %>
+   <style type="text/css">
+     .input{
+    
+     },
+     .input-label{
+      font-size: 20px;
+     },
+     .form-wrap{
+      background-color: black;
+     }
+     
+   </style>   
+   <div class="container">
+    <div class="row">
+<%= form_with(model: hostel, local: true, :class => 'form-wrap') do |form| %>
   <% if hostel.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
@@ -11,36 +25,83 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :hostel_name %>
-    <%= form.text_field :hostel_name %>
+<div class="row">
+  <div class="col-lg-4">
+    <%= form.label :hostel_name, class: 'input-label' %>
   </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <div class="col-lg-8">
+    <%= form.text_field :hostel_name, style:"width:200%;height:130%;  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" %>
   </div>
-
-   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-4">
+    <%= form.label :location, :class =>"input-label" %>
   </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+  <div class="col-lg-8">
+    <%= form.text_field :location, :class => 'input', style:"width:200%;height:130%;border-radius:5px;  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;font-size:18px;" %>
   </div>
-
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
+</div>
+<br>
+<br>
+<div class="row">
+   <div class="col-lg-4">
+    <%= form.label :description, :class =>"input-label" %>
+  </div>
+  <div class="col-lg-8">
+    <%= form.text_area :description, :required => true, :class =>"input", style:"width:200%;height:130%;  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" %>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-4">
+    <%= form.label :price, :class =>"input-label" %>
+  </div>
+  <div class="col-lg-8">
+    <%= form.number_field :price, :required => true, :class =>"input", style:"width:200%;height:130%;  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" %>
+  </div>
   </div>
   <br>
-   <div class="field">
+  <br>
+
+<div class="row">
+  <div class="col-lg-4">
+    <%= form.label :images, :class =>"input-label" %>
+  </div>
+  <div class="col-lg-8">
+   <%= form.file_field :images, multiple: true, :required => true %>
+  </div>
+  </div>
+  <br>
+  <br>
+   <div>
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<br>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= form.submit("Add Hostel", :class => "btn btn-danger" )%>
+    </div>
   </div>
 <% end %>
+</div>
+ </div>
