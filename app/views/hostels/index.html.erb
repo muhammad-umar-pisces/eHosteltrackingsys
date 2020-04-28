@@ -5,13 +5,19 @@
   background-color: #679b9b;
   border: none;
 };
+.map-div{
+  justify-content: right;
+  border: 1px solid;
+  width: 30%;
+  height: auto;
+};
 </style>
 <%= link_to 'New Hostel', new_hostel_path %><br><br><br><br>
 
 <div class="container" style="width: 100%;">
   <% current_user.hostels.each do |hostel| %>
 <div class="row" style="width: 100%;">
-    <div class="col-md-6 content" style="border: 1px solid;padding: 1%;width: 80%;">
+    <div class="col-md-6 content" style="border: 1px solid;padding: 1%;width: 100%;">
       <span><strong>Hostel Name:</strong></span>
         <%= hostel.hostel_name %><br>
         <span><strong>Hostel Location:</strong></span>
@@ -27,7 +33,3 @@
     </div>
  <% end %>
  </div>
-
-   <script type="text/javascript">
-      
-   </script>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-	root 'hostels#index'
+  get 'index/index'
+	root 'index#index'
+	get 'index/show'
   resources :hostels do
   	collection do 
   		get 'find'
