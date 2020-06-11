@@ -14,10 +14,10 @@
 </style>
 <%= link_to 'New Hostel', new_hostel_path %><br><br><br><br>
 
-<div class="container" style="width: 100%;">
+<div class="container" >
   <% current_user.hostels.each do |hostel| %>
-<div class="row" style="width: 100%;">
-    <div class="col-md-6 content" style="border: 1px solid;padding: 1%;width: 100%;">
+<div class="row" >
+    <div class="col-md-6 content">
       <span><strong>Hostel Name:</strong></span>
         <%= hostel.hostel_name %><br>
         <span><strong>Hostel Location:</strong></span>
@@ -26,7 +26,7 @@
         <%= hostel.price %>
         <%= image_tag hostel.images.first, class: "img-responsive float-right"%>
         <br>
-         <%= link_to 'show more', hostel %>
+         <%= link_to 'show more', hostel, :class => "btn btn-info" %>
         <br><br>
         <hr>
     </div>

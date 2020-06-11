@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'index/index'
 	root 'index#index'
-	get 'index/show'
   resources :hostels do
+  	member do
+  		delete :delete_image_attachment
+  	end
   	collection do 
   		get 'find'
   	end

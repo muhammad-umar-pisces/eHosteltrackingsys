@@ -13,6 +13,13 @@ class HostelsController < ApplicationController
   def show
   end
 
+  #delete single image 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: hostel_path)
+  end
+
   # GET /hostels/new
   def new
     @hostel = Hostel.new
@@ -74,6 +81,6 @@ class HostelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hostel_params
-      params.require(:hostel).permit(:hostel_name, :location, :price, :user_id, :description, {images: []})
+      params.require(:hostel).permit(:hostel_name, :location, :price, :user_id,:hostel_type ,:description, {images: []})
     end
 end

@@ -6,10 +6,12 @@
 	};
 
 </style>
+<% if current_user.admin? %>
  <%= link_to 'Edit', edit_hostel_path(@hostel) %>|
- <%= link_to 'Destroy', @hostel, method: :delete, data: { confirm: 'Are you sure?' } %>|
+ <%= link_to 'Destroy', @hostel, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% end %>
 
-<%= link_to 'Back', index_index_path %>
+<%= link_to 'Back', hostels_path %>
 
 <p id="notice"><%= notice %></p>
 
@@ -27,13 +29,24 @@
   <strong>Price:</strong>
   <%= @hostel.price %>
 </p>
+<p>
+  <strong>Description:</strong>
+  <%= @hostel.description %>
+</p>
+ <strong>Owner Email:</strong>
+  <%= @hostel.user.email %>
+</p>
+
+<br>
 <div class="container">
 	<div class="row">
 	 <% (0...@hostel.images.count).each do |image| %>
 	  <div class="img-div col-md-4">
 		<%= image_tag(@hostel.images[image], :class => "img") %>
+		 <%= link_to "Remove img", delete_image_attachment_hostel_path(@hostel.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
 	  </div>
 	  <% end %>
 
 	</div>
 </div>
+
