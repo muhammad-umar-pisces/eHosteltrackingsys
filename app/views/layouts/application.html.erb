@@ -220,14 +220,16 @@ section .section-title {
     margin-bottom: 10px;
 }
 }
-
-      
     </style>
- 
-  </head>
-
-  <body>
- <br><br><br> <br><br><br> <br>
+</head>
+<body>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
 <nav class="navbar navbar-default navbar-expand-xl navbar-fixed-top">
   <div class="navbar-header d-flex col">
     <a class="navbar-brand" ><%= link_to root_path do %>
@@ -243,8 +245,8 @@ section .section-title {
   <!-- Collection of nav links, forms, and other content for toggling -->
   <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
     <ul class="nav navbar-nav" style="margin-top: 25px; margin-left: 1%;">
-      <li class="nav-item active"><a href="#" class="nav-link" style="font-size: 2rem;">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link" style="font-size: 2rem;">Boys Hostels</a></li>
+      <li class="nav-item active"><%= link_to 'Home', index_index_path%></li>
+      <li class="nav-item"><%= link_to 'Boys Hostels', boys_path%></a></li>
       <li class="nav-item"><a href="#" class="nav-link" style="font-size: 2rem;">Girls Hostels</a></li>
        <li class="nav-item"><a href="#" class="nav-link" style="font-size: 2rem;">About</a></li>
       <li class="nav-item"><a href="#" class="nav-link" style="font-size: 2rem;">Contact</a></li>

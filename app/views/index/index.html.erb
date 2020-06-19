@@ -49,8 +49,9 @@ body {
 }
 
 </style>
-<% if user_signed_in? %>
+<% if current_user.try(:admin?) %>
   <%= link_to 'Add Hostel', new_hostel_path, :class => 'btn btn-success' %> 
+  <%= link_to 'My hostels', hostels_path, :class => 'btn btn-info' %>
 <% end %>
 <br><br><br><br>
 <div class="container-fluid" style="background-color: black;height: 400px;border-radius:5px;color: white;">

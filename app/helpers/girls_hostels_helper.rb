@@ -1,0 +1,2 @@
+module GirlsHostelsHelper
+end

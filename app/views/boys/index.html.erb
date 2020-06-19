@@ -1,0 +1,27 @@
+<style type="text/css">
+	.img{
+		height: 200px;
+		width: auto;
+	}
+</style>
+<% @boy.each do |hostel| %>
+<div class="container">
+<div class="row">
+	<div class="col-sm-3">
+		<%= image_tag hostel.images.first, class: "img-responsive img" %>
+	</div>
+	<div class="col-sm-9">
+		<br>
+		<strong>Hostel Name:</strong><%= hostel.hostel_name %><br>
+		<strong>Description:</strong><%= hostel.description %><br>
+		<strong>Price:</strong><%= hostel.price %>
+		<br>
+		<br>
+		<%= link_to "Show More", :controller => "hostels", :action => "show", :id => hostel.id %>
+	</div>
+	<br>
+	<br>
+</div>
+</div>
+<br>
+<% end %>

@@ -18,16 +18,17 @@
   <% current_user.hostels.each do |hostel| %>
 <div class="row" >
     <div class="col-md-6 content">
-      <span><strong>Hostel Name:</strong></span>
+        <span><strong>Hostel Name:</strong></span>
         <%= hostel.hostel_name %><br>
         <span><strong>Hostel Location:</strong></span>
          <%= hostel.location %><br>
         <span><strong>Hostel Price:</strong></span>
         <%= hostel.price %>
-        <%= image_tag hostel.images.first, class: "img-responsive float-right"%>
+        <%= image_tag hostel.images.first if hostel.images.attached?%>
         <br>
          <%= link_to 'show more', hostel, :class => "btn btn-info" %>
-        <br><br>
+        <br>
+        <br>
         <hr>
     </div>
     </div>
