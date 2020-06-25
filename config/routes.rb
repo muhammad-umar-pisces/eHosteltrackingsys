@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'girls/index'
   get 'boys/index'
   get 'boys/show'
+  get 'girls/index'
   resources :boys do
   end
  

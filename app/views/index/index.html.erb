@@ -63,23 +63,25 @@ body {
 <div class="container-fluid">
   <div class="row" >
     <% @firstpage.each do |f| %>
+    <% if f.images.present? %>
     <div class="col-sm-4" style="margin-top: 40px;">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      
+      <%= image_tag(f.images.first, class: 'img img-responsive') if f.images.attached? %>
     </div>
     <div class="flip-card-back">
       <h1><%= f.hostel_name %></h1> 
       <p><%= f.location %></p> 
       <p><%= f.price %></p>
       <p style="margin: 2.5%; 
-  width: 280px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;  "><%= f.description %></p>
+       width: 280px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;  "><%= f.description %></p>
       <%= link_to "Show More", :controller => "hostels", :action => "show", :id => f.id %>
     </div>
   </div>
 </div>
 </div>
+<% end %>
 <% end %>
 </div>
 
@@ -93,6 +95,10 @@ body {
         <br><br><br><br>
     </div>
   </div>
+</div>
+<div class="container-fluid">
+
+  
 </div>
 
 <script type="text/javascript">

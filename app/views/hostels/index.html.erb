@@ -24,7 +24,9 @@
          <%= hostel.location %><br>
         <span><strong>Hostel Price:</strong></span>
         <%= hostel.price %>
-        <%= image_tag hostel.images.first if hostel.images.attached?%>
+        <br>
+        <br>
+        <%= image_tag(hostel.images.first, class: 'img img-responsive') if hostel.images.attached?%>
         <br>
          <%= link_to 'show more', hostel, :class => "btn btn-info" %>
         <br>
