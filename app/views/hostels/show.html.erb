@@ -22,7 +22,9 @@
 	 <% (0...@hostel.images.count).each do |image| %>
 	  <div class="img-div col-md-4">
 		<%= image_tag(@hostel.images[image], :class => "img") %>
+    <% if current_user.admin? %>
 		 <%= link_to "Remove img", delete_image_attachment_hostel_path(@hostel.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
+     <% end %>
 	  </div>
 	  <% end %>
 

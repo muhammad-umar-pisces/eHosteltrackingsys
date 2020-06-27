@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+
+
   get 'index/index'
 	root 'index#index'
   get 'girls/index'
   get 'boys/index'
   get 'boys/show'
   get 'girls/index'
+  get 'index/profile'
   resources :boys do
   end
  
@@ -16,7 +22,5 @@ Rails.application.routes.draw do
   		get 'find'
   	end
   end
-  
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

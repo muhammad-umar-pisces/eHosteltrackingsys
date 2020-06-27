@@ -48,23 +48,29 @@ body {
   overflow: hidden;
 }
 
+
 </style>
 <% if current_user.try(:admin?) %>
   <%= link_to 'Add Hostel', new_hostel_path, :class => 'btn btn-success' %> 
   <%= link_to 'My hostels', hostels_path, :class => 'btn btn-info' %>
 <% end %>
 <br><br><br><br>
-<div class="container-fluid" style="background-color: black;height: 400px;border-radius:5px;color: white;">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-12 content">
+<div class="" style="background-color: black;height: 400px;border-radius:5px;color: white;">
   <h2>Need Hostel.......?</h2>
   <h4>E Hostel Tracking System is a platform where you can find new hostels and flats </h4>
-    
+    </div>
+</div>
+</div>
 </div>
 <br><br>
 <div class="container-fluid">
   <div class="row" >
     <% @firstpage.each do |f| %>
     <% if f.images.present? %>
-    <div class="col-sm-4" style="margin-top: 40px;">
+    <div class="col-lg-4" style="margin-top: 40px;">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
@@ -88,18 +94,7 @@ body {
 </div>
 <br><br>
 <br><br>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4 " style="width: 700px; height: 440px;">
-        <div style="overflow:hidden;width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=lahore+(Lahore%20)&amp;ie=UTF8&amp;t=p&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/de/">Embedgooglemaps.com/de/</a> & <a href="https://www.theparacast.com/">best targeted traffic service</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
-        <br><br><br><br>
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
 
-  
-</div>
 
 <script type="text/javascript">
 </script>
