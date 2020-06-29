@@ -50,11 +50,13 @@ body {
 
 
 </style>
+<%= link_to "Search", new_search_path, :class => 'btn btn-primary' %>
 <% if current_user.try(:admin?) %>
   <%= link_to 'Add Hostel', new_hostel_path, :class => 'btn btn-success' %> 
   <%= link_to 'My hostels', hostels_path, :class => 'btn btn-info' %>
 <% end %>
 <br><br><br><br>
+
 <div class="container-fluid">
 <div class="row">
   <div class="col-lg-12 content">

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'boys/index'
   get 'boys/show'
   get 'girls/index'
-  get 'index/profile'
+  get 'index/userprofile'
+  get 'index/search'
+  resources :searches
   resources :boys do
   end
  

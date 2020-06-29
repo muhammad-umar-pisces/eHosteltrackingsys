@@ -1,0 +1,17 @@
+<h1>Search Form</h1>
+<%= form_for @search, html: {class: "pure-form"} do |f| %>
+
+	<div class="field">
+		<%= f.label :location %><br />
+		<%= f.text_field :location %>
+	</div><br>
+	<div class="field">
+		<p><%= f.label :min_price, "Min Price" %> - <%= f.text_field :min_price, size: 4 %></p>
+		<p><%= f.label :max_price, "Min Price" %> - <%= f.text_field :max_price, size: 4 %></p>
+	</div>
+	<div class="field">
+		<%= f.label :hostel_type %><br />
+		<%= f.select :hostel_type, ['Boys', 'Girls', 'Flats'] %>
+	</div><br>
+	<div class="action"><%= f.submit "Search", class: "pure-button pure-button-primarry" %></div>
+<% end %>
