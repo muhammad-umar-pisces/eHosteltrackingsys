@@ -3,6 +3,18 @@
   width:100px;
   height:100px;
 }
+.imgs{
+	width: 100%;
+	height: auto;
+
+}
+.content{
+	height: 300px;
+	margin-left: 400px;
+}
+.text{
+	font-size: 18px;
+}
 </style>
 <h1>Search Results</h1>
 <% if @search.search_hostels.empty? %>
@@ -12,13 +24,27 @@
 <% else %>
 <% @search.search_hostels.each do |f| %>
 <br>
-
-	 <%= image_tag(f.images.first, class: 'img img-responsive') if f.images.attached? %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= image_tag(f.images.first, class: 'img img-responsive imgs') if f.images.attached? %>
+			</div>
+			<div class="com-sm-4 content">
+				<br><br>
+				<span class="text"><b>Hostel Name:</b></span> <span class="text"><%= f.hostel_name %></span><br>
+				<span class="text"><b>Location:</b></span> <span class="text"><%= f.location %></span><br>
+				<span class="text"><b>Hostel Tyoe:</b></span> <span class="text"><%= f.hostel_type %></span><br>
+				<span class="text"><b>Price:</b></span> <span class="text"><%= f.price %></span><br>
+				<span class="text"><b>Description:</b></span> <span class="text"><%= f.description %></span><br>
+				<%= link_to "Show More", :controller => "hostels", :action => "show", :id => f.id , :class => "btn btn-success"%>
+			</div>
+			<div class="col-sm-5"></div>
+		</div>
+		<hr style="width:50%;text-align:left;margin-left:0">
+	</div>
+	 
 	
 	 
-	<%= f.location %>
-	<%= f.description %>
-	<%= f.hostel_type %>
-	<%= f.price %>
+	
 <% end %>
 <% end %>

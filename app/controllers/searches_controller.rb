@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-
+before_action :authenticate_user!, except: [:new, :show, :create]
 	def new
 		@search = Search.new
 		# @location = Hostel.uniq.pluck(:location) 
