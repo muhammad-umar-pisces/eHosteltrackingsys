@@ -93,10 +93,6 @@ body {
 <div class="flex-container">
  <%= link_to "Search Your Hostel", new_search_path, :class => "gradient-button gradient-button-1", :style => "flex-grow:8"%>
  </div>
-<% if current_user.try(:admin?) %>
-  <%= link_to 'Add Hostel', new_hostel_path, :class => 'btn btn-success' %> 
-  <%= link_to 'My hostels', hostels_path, :class => 'btn btn-info' %>
-<% end %>
 <br><br><br><br>
 
 <div class="container-fluid">
