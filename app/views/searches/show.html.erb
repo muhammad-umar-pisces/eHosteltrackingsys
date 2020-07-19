@@ -4,8 +4,13 @@
   height:100px;
 }
 .imgs{
-	width: 100%;
-	height: auto;
+	width: 300px;
+	height: 250px;
+	border-radius: 15px;
+
+}
+.imgs:hover{
+	opacity: .4;
 
 }
 .content{
@@ -13,10 +18,16 @@
 	margin-left: 400px;
 }
 .text{
-	font-size: 18px;
+	font-size: 15px;
+	text-decoration: none;
+	color: black;
+
+}
+.search-cont:hover{
+	opacity: .7;
 }
 </style>
-<h1>Search Results</h1>
+<h2>Search Results</h2>
 <% if @search.search_hostels.empty? %>
 <div class="alert alert-danger" role="alert">
   No record found
@@ -24,27 +35,26 @@
 <% else %>
 <% @search.search_hostels.each do |f| %>
 <br>
-	<div class="container">
+		<%= link_to  :controller => "hostels", :action => "show", :id => f.id do%>
+	
+		<div class="container search-cont" style="background-color: #fff;border-radius: 15px;">
+		<br>
 		<div class="row">
 			<div class="col-lg-3">
-				<%= image_tag(f.images.first, class: 'img img-responsive imgs') if f.images.attached? %>
+				<%= image_tag(f.images.first, class: 'img img-responsive imgs') if f.images.attached?  %>
 			</div>
 			<div class="com-sm-4 content">
 				<br><br>
 				<span class="text"><b>Hostel Name:</b></span> <span class="text"><%= f.hostel_name %></span><br>
-				<span class="text"><b>Location:</b></span> <span class="text"><%= f.location %></span><br>
+				<span class="text"><b>Location:</b></span> <span class="text"><%= f.location%></span><br>
 				<span class="text"><b>Hostel Tyoe:</b></span> <span class="text"><%= f.hostel_type %></span><br>
 				<span class="text"><b>Price:</b></span> <span class="text"><%= f.price %></span><br>
 				<span class="text"><b>Description:</b></span> <span class="text"><%= f.description %></span><br>
-				<%= link_to "Show More", :controller => "hostels", :action => "show", :id => f.id , :class => "btn btn-success"%>
+				
 			</div>
-			<div class="col-sm-5"></div>
+			
 		</div>
-		<hr style="width:50%;text-align:left;margin-left:0">
 	</div>
-	 
-	
-	 
-	
+	<% end %>	
 <% end %>
 <% end %>
