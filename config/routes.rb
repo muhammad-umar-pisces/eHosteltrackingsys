@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'girls/index'
   get 'index/userprofile'
   get 'index/search'
+  get 'index/latest'
   resources :searches
   resources :boys do
   end
@@ -19,10 +20,16 @@ Rails.application.routes.draw do
   resources :hostels do
   	member do
   		delete :delete_image_attachment
+
   	end
-  	collection do 
-  		get 'find'
-  	end
+    member do
+     get 'hostel_details'
+      
+    end
+    collection do
+      get 'support'
+    end
+  
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,82 @@
+<style>
+	.call-link{
+		margin:10px;
+		background-color: #2eca6a;
+		color: #fff;
+		border:none;
+		width: 7%;
+		height: 60px;
+		border-radius: 70%;
+
+	}
+	.call-link:hover{
+		opacity: .5;
+	}
+	.phone-icon{
+		font-size: 200%;
+	}
+	.img{
+		height: 300px;
+		border:5px solid;
+	}
+	
+
+</style>
+<br><br>
+	<div class="container">
+		<div class="row">
+	<% (0...@details.images.count).each do |image| %>
+		<div class="col-sm-4">
+      <%= image_tag(@details.images[image], :class => "img-responsive img") %>
+
+     </div>
+
+     <% end %>
+
+		</div>
+		<br><br><br>
+
+	</div>
+	
+	<center>
+		<button class="call-link" onclick="getPhone()">
+			<i class="fas fa-phone phone-icon"></i>
+		</button>
+		
+	</center>
+
+	<div class="container" style="background-color: #fff;border-radius: 10px;">
+		<div class="row">
+			<div class="col-sm-2">
+				<h4><b>Hostel Name</b></h4>
+				<hr>
+				<h4><b>Hostel Location</b></h4>
+				<hr>
+				<h4><b>Hostel Rent/month</b></h4>
+				<hr>
+				<h4><b>Hostel Type</b></h4>
+				<hr>
+				<h4><b>About Hostel</b></h4><br><br>
+				<hr>
+				
+
+			</div>
+			<div class="col-sm-10">
+				<h4><%= @details.hostel_name %></h4>
+				<hr>
+				<h4><%= @details.location %></h4>
+				<hr>
+				<h4><%= @details.price %></h4>
+				<hr>
+				<h4><%= @details.hostel_type %></h4>
+				<hr>
+				<h4><%= @details.description %></h4>
+				<hr>
+			</div>
+		</div>
+	</div>
+
+
+
+
+

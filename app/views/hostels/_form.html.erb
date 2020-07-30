@@ -1,17 +1,8 @@
    <style type="text/css">
-     .input{
     
-     },
-     .input-label{
-      font-size: 20px;
-     },
-     .form-wrap{
-      background-color: black;
-     }
      
    </style>   
-   <div class="container">
-    <div class="row">
+
 <%= form_with(model: hostel, local: true, :class => 'form-wrap') do |form| %>
   <% if hostel.errors.any? %>
     <div id="error_explanation">
@@ -25,96 +16,46 @@
     </div>
   <% end %>
 
-<div class="row">
-  <div class="col-lg-2" style="text-align: center;margin-top: 18px;">
-    <%= form.label :hostel_name, class: 'input-label' %>
-  </div>
-  <div class="col-lg-4">
-    <%= form.text_field :hostel_name, :required => true, style:"width:100%;height:50px;  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;font-size:18px;" %>
-  </div>
-</div>
-<br>
-<br>
-<div class="row">
-  <div class="col-lg-2" style="text-align: center;margin-top: 18px;">
-    <%= form.label :location, :class =>"input-label" %>
-  </div>
-  <div class="col-lg-4">
-    <%= form.text_field :location,:required => true, :class => 'input', style:"width:100%;height:50px;border-radius:5px;  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;font-size:18px;" %>
-  </div>
-</div>
-<br>
-<br>
-<div class="row">
-  <div class="col-md-2" style="text-align: center;margin-top: 18px;">
-    <%= form.label :hostel_type,:required => true, :class =>"input-label" %>
-    
-  </div>
-  <div class="col-md-4">
-    <br>
-  <%= form.select :hostel_type, ['Boys', 'Girls', 'Flats'] %>
-  </div>
+  <div class="container" style="width: 40%;">
+ <form>
   
-</div>
-<br>
-<br>
-<div class="row">
-   <div class="col-lg-2" style="text-align: center;margin-top: 35px;">
-    <%= form.label :description, :required => true, :class =>"input-label" %>
-  </div>
-  <div class="col-lg-4">
-    <%= form.text_area :description, :required => true, :class =>"input", style:"width:100%;height:80px;  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;font-size:18px;" %>
-  </div>
-</div>
-<br>
-<br>
-<div class="row">
-  <div class="col-lg-2" style="text-align: center;margin-top: 18px;">
-    <label>Price (per month)</label>
-  </div>
-  <div class="col-lg-4">
-    <%= form.number_field :price, :required => true, :class =>"input", style:"width:100%;height:50px;  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;font-size:18px;" %>
-  </div>
-  </div>
-  <br>
-  <br>
-
-<div class="row">
-  <div class="col-lg-2" style="text-align: center;margin-top:5px ;">
-    <%= form.label :images, :class =>"input-label" %>
-  </div>
-  <div class="col-lg-4">
-   <%= form.file_field :images, multiple: true, :required => true %>
-  </div>
-  </div>
-  <br>
-  <br>
-   <div>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-<br>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
-      <%= form.submit("Add Hostel", :class => "btn btn-danger" )%>
+    <div class="form-group">
+    <%= form.label :hostel_name %>
+    <%= form.text_field :hostel_name, :required => true, :class => "form-control" %>
     </div>
-  </div>
+
+    <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location,:required => true, :class => 'form-control' %>
+    </div>
+
+    <div class="form-group">
+    <label>Hostel Type</label>
+    <%= form.select :hostel_type, ['Boys', 'Girls', 'Flats'] %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, :required => true, :class =>"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :price %>
+    <%= form.number_field :price, :required => true, :class =>"input", :class => "form-control" %>
+    </div>
+  
+  <div class="form-group">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true, :required => true , :class => "" %>
+    </div>
+ 
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+      <%= form.submit("Add Hostel", :class => "btn btn-primary" )%>
+   </form>
+   </div>
 <% end %>
-</div>
- </div>
+
+
+
+

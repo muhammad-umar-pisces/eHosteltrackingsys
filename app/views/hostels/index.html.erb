@@ -12,7 +12,8 @@
   height: auto;
 };
 </style>
-<%= link_to 'New Hostel', new_hostel_path %><br><br><br><br>
+<br><br><br>
+<%= link_to 'Add New Hostel', new_hostel_path, :class => "btn btn-primary" %><br><br><br><br>
 
 <div class="container" >
   <% current_user.hostels.each do |hostel| %>

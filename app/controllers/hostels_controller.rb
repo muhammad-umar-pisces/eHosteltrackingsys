@@ -13,6 +13,11 @@ class HostelsController < ApplicationController
   def show
   end
 
+  def hostel_details
+    @details = Hostel.find(params[:id])
+
+  end
+
   #delete single image 
   def delete_image_attachment
     @image = ActiveStorage::Attachment.find(params[:id])
