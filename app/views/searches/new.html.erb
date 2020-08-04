@@ -360,6 +360,7 @@ textarea {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
+  text-transform: lowercase;
   /* 2 */
 }
 
@@ -1186,7 +1187,7 @@ legend {
             <div class="icon-wrap">
              <i class="fas fa-map-marker" ></i>
             </div>
-            <%= f.text_field :location, :id => "search", :placeholder => "Search Hostel in Your Location", autocomplete: 'off' %>
+            <%= f.text_field :location, :id => "search", :placeholder => "Search Hostel in Your Location", autocomplete: 'off', style: "text-transform: lowercase;" %>
           </div>
           <div class="input-field second-wrap" style="margin-top: 10px;">
             <div class="icon-wrap">
