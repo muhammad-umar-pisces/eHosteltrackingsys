@@ -42,9 +42,11 @@
     <%= form.text_area :description, :required => true, :class =>"form-control" %>
     </div>
 
+
+
     <div class="form-group">
-      <%= form.label :price %>
-    <%= form.number_field :price, :required => true, :class =>"input", :class => "form-control" %>
+      <%= form.label :Mess_Availability %>
+    <%= form.select :mess, ['', 'Yes', 'No'] %>
     </div>
   
   <div class="form-group">

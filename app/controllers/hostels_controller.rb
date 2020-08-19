@@ -86,6 +86,6 @@ class HostelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hostel_params
-      params.require(:hostel).permit(:hostel_name, :location, :price, :user_id,:hostel_type ,:description, {images: []})
+      params.require(:hostel).permit(:hostel_name, :location, :price, :user_id,:hostel_type ,:description, {images: []} , :mess)
     end
 end

@@ -1,0 +1,10 @@
+<% if current_user.username.present? && current_user.contact_num.present? %>
+<% redirect_to new_hostel_path %>
+<% else %>
+<br><br>
+	<div class="alert alert-danger" role="alert">
+  Your Profile Is Not Complete—<b><%= link_to 'please edit profile', edit_user_registration_path %></b>
+</div>
+
+<% end %>
+

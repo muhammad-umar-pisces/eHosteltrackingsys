@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
       }
 
 
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   get 'index/userprofile'
   get 'index/search'
   get 'index/latest'
+  get 'users/user_profile'
+  get 'users/profile_check'
   resources :searches
   resources :boys do
   end

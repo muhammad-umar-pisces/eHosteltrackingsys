@@ -401,7 +401,7 @@
                     <div class="price-box d-flex">
                       <span class="price-a">rent |<b> <%= hostel.price %></b></span>
                     </div>
-                    <a class="link-a"><%= link_to "Click here to review>", :controller => "hostels", :action => "show", :id => hostel.id %>
+                    <a class="link-a"> <%= link_to "Show More", :controller => "hostels", :action => "hostel_details", :id => hostel.id%>
                       <span class="ion-ios-arrow-forward"></span>
                     </a>
                   </div>
