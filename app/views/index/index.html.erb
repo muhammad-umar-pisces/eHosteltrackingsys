@@ -133,6 +133,11 @@ body {
   padding-right: 0;
   padding-left: 0;
 }
+.index-img{
+  margin-top: 10px;
+  border-radius: 5%;
+  height: 400px;
+}
 
 </style>
 
@@ -147,9 +152,17 @@ body {
 <div class="container-fluid">
 <div class="row">
   <div class="col-lg-12 content">
-<div class="" style="background-color: black;height: 400px;border-radius:5px;color: white;padding: 2%;">
-  <h2>Need Hostel.......?</h2>
-  <h4>E Hostel Tracking System is a platform where you can find new hostels and flats </h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color: black;height: 400px;color: #fff;border-radius: 5%; margin-top: 10px;">
+        <h2>Need Hostel.......?</h2>
+    <h3>E Hostel Tracking System is a platform where you can find new hostels and flats </h3>
+      
+    </div>
+    <div class="col-sm-6">
+      <%= image_tag 'pic.jpg', :class => 'img-responsive index-img' %>
+    </div>
+  </div>
     </div>
 </div>
 </div>

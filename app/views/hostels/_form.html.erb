@@ -2,65 +2,73 @@
     .lowercase{
       text-transform: lowercase;
     }
-     
-   </style>   
-   
 
-<%= form_with(model: hostel, local: true, :class => 'form-wrap') do |form| %>
+  </style>   
+
+  <% if current_user.admin? %>
+
+  <%= form_with(model: hostel, local: true, :class => 'form-wrap') do |form| %>
   <% if hostel.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
 
-      <ul>
+    <ul>
       <% hostel.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="container" style="width: 40%;">
- <form>
-  
+   <form>
+
     <div class="form-group">
-    <%= form.label :hostel_name %>
-    <%= form.text_field :hostel_name, :required => true, :class => "form-control" %>
+      <%= form.label :hostel_name %>
+      <%= form.text_field :hostel_name, :required => true, :class => "form-control" %>
     </div>
 
     <div class="form-group">
-    <%= form.label :location %>
-    <%= form.text_field :location,:required => true, :class => 'form-control lowercase' %>
+      <%= form.label :location %>
+      <%= form.text_field :location,:required => true, :class => 'form-control lowercase' %>
     </div>
 
     <div class="form-group">
-    <label>Hostel Type</label>
-    <%= form.select :hostel_type, ['Boys', 'Girls', 'Flats'] %>
+      <label>Price/per head</label>
+      <%= form.text_field :price,:required => true, :class => 'form-control lowercase' %>
     </div>
 
     <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description, :required => true, :class =>"form-control" %>
+      <label>Hostel Type</label>
+      <%= form.select :hostel_type, ['Boys', 'Girls', 'Flats'] %>
     </div>
 
-
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, :required => true, :class =>"form-control" %>
+    </div>
 
     <div class="form-group">
       <%= form.label :Mess_Availability %>
-    <%= form.select :mess, ['', 'Yes', 'No'] %>
+      <%= form.select :mess, ['', 'Yes', 'No'] %>
     </div>
-  
-  <div class="form-group">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true, :required => true , :class => "" %>
+
+    <div class="form-group">
+      <%= form.label :images %>
+      <%= form.file_field :images, multiple: true, :required => true , :class => "" %>
     </div>
- 
+
     <%= form.hidden_field :user_id, value: current_user.id %>
 
-      <%= form.submit("Add Hostel", :class => "btn btn-primary" )%>
-   </form>
-   </div>
+    <%= form.submit("Add Hostel", :class => "btn btn-primary" )%>
+  </form>
+</div>
 <% end %>
-
+<%else%>
+<div class="alert alert-danger" role="alert">
+  <b>Please edit your profile to add a hostel</b>
+</div>
+<% end %>
 
 
 

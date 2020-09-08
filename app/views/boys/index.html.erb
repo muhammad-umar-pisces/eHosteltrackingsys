@@ -3,86 +3,86 @@
 		height: 200px;
 		width: auto;
 	}
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
+    .card-box-a,
+    .card-box-b,
+    .card-box-c,
+    .card-box-d {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid .card-box-a,
+    .grid .card-box-b,
+    .grid .card-box-c,
+    .grid .card-box-d {
+      margin-bottom: 2.5rem;
+    }
+  }
+
   .card-box-a,
   .card-box-b,
-  .card-box-c,
   .card-box-d {
-    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
-}
 
-@media (min-width: 768px) {
-  .grid .card-box-a,
-  .grid .card-box-b,
-  .grid .card-box-c,
-  .grid .card-box-d {
-    margin-bottom: 2.5rem;
+  .card-box-a .img-a,
+  .card-box-a .img-b,
+  .card-box-b .img-a,
+  .card-box-b .img-b {
+    transition: .8s all ease-in-out;
   }
-}
 
-.card-box-a,
-.card-box-b,
-.card-box-d {
-  position: relative;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.card-box-a .img-a,
-.card-box-a .img-b,
-.card-box-b .img-a,
-.card-box-b .img-b {
-  transition: .8s all ease-in-out;
-}
-
-@media (min-width: 768px) {
-  .card-box-a:hover .img-a,
-  .card-box-a:hover .img-b,
-  .card-box-b:hover .img-a,
-  .card-box-b:hover .img-b {
-    transform: scale(1.2);
+  @media (min-width: 768px) {
+    .card-box-a:hover .img-a,
+    .card-box-a:hover .img-b,
+    .card-box-b:hover .img-a,
+    .card-box-b:hover .img-b {
+      transform: scale(1.2);
+    }
   }
-}
 
-@media (min-width: 768px) {
-  .card-box-a .price-a,
-  .card-box-b .price-a {
-    font-size: .9rem;
+  @media (min-width: 768px) {
+    .card-box-a .price-a,
+    .card-box-b .price-a {
+      font-size: .9rem;
+    }
   }
-}
 
-@media (min-width: 992px) {
-  .card-box-a .price-a,
-  .card-box-b .price-a {
-    font-size: 1rem;
+  @media (min-width: 992px) {
+    .card-box-a .price-a,
+    .card-box-b .price-a {
+      font-size: 1rem;
+    }
   }
-}
 
-.card-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
+  .card-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 
-.card-shadow {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+  .card-shadow {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 
-.card-shadow:before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
-}
+  .card-shadow:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
+  }
 
 /*======================================
 //--//-->   PROPERTY - CARD-A
@@ -329,73 +329,73 @@
 }
 
 </style>
- <section class="intro-single">
-      <div class="container">
-        <div class="row" style="background-color:#fff ; height: 100px; width: 100%; border-radius: 10px;">
-          <div class="col-md-12 col-lg-8" >
-            <div class="title-single-box">
-              <h1 class="title-single">Top Boys Hostel</h1>
-              
+<section class="intro-single">
+  <div class="container">
+    <div class="row" style="background-color:#fff ; height: 100px; width: 100%; border-radius: 10px;">
+      <div class="col-md-12 col-lg-8" >
+        <div class="title-single-box">
+          <h1 class="title-single">Top Boys Hostel</h1>
+          
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+  <section class="property-grid grid">
+    <div class="container" style="font-size: 35px;">
+      <div class="row">
+       <% @boy.each do |hostel| %>
+       <div class="col-md-4" style="margin-top: 1%;">
+        <div class="card-box-a card-shadow">
+          <div class="img-box-a">
+           <%= image_tag hostel.images.first, class: "img-a img-fluidg img-responsive img" %>
+         </div>
+
+         <div class="card-overlay">
+          <div class="card-overlay-a-content">
+            <div class="card-header-a">
+              <h2 class="card-title-a">
+                <a href="#"><b><%= hostel.location %></b></a>
+              </h2>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-              
-            </nav>
+            <div class="card-body-a">
+              <div class="price-box d-flex">
+                <span class="price-a">rent |<b> <%= hostel.price %></b></span>
+              </div>
+              <a class="link-a"> <%= link_to "Show More", :controller => "hostels", :action => "hostel_details", :id => hostel.id%>
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
+            </div>
+            <div class="card-footer-a">
+              <ul class="card-info d-flex justify-content-around">
+                <li style="margin-top: -20px;">
+                  <h1 class="card-info-title" style="font-size: 16px;"><b>Hostel Name</b></h1>
+                  <h2 style="margin-top: -10px; color:#fff ;"><%= hostel.hostel_name %></h2>
+                </li>
+                
+              </ul>
+            </div>
+            
+            
+
           </div>
         </div>
       </div>
-    </section>
+    </div>  
 
- <main id="main">
-    <section class="property-grid grid">
-      <div class="container" style="font-size: 35px;">
-        <div class="row">
-        	<% @boy.each do |hostel| %>
-          <div class="col-md-4" style="margin-top: 1%;">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-              	<%= image_tag hostel.images.first, class: "img-a img-fluidg img-responsive img" %>
-              </div>
-
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#"><b><%= hostel.location %></b></a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent |<b> <%= hostel.price %></b></span>
-                    </div>
-                    <a class="link-a"> <%= link_to "Show More", :controller => "hostels", :action => "hostel_details", :id => hostel.id%>
-                      <span class="ion-ios-arrow-forward"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li style="margin-top: -20px;">
-                        <h1 class="card-info-title" style="font-size: 16px;"><b>Hostel Name</b></h1>
-                        <h2 style="margin-top: -10px; color:#fff ;"><%= hostel.hostel_name %></h2>
-                      </li>
-                       
-                    </ul>
-                  </div>
-              
-                       
-
-                </div>
-              </div>
-            </div>
-          </div>  
-
-          <% end %> 
+    <% end %> 
 
 
-        </div>
+  </div>
 
-      </div>
-      <br><br>
-    </section>
-	</main>
+</div>
+<br><br>
+</section>
+</main>

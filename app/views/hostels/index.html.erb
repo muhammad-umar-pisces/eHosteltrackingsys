@@ -14,7 +14,12 @@
 </style>
 <br><br><br>
 <%= link_to 'Add New Hostel', new_hostel_path, :class => "btn btn-primary" %><br><br><br><br>
-
+<center>
+<button type="button" class="btn btn-primary">
+  Total Hostel <span class="badge badge-light"><%= current_user.hostels.count %></span>
+  
+</button>
+</center>
 <div class="container" >
   <% current_user.hostels.each do |hostel| %>
 <div class="row" >
