@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
 
-
+  post 'chatbot'
   get 'index/index'
 	root 'index#index'
   get 'girls/index'
